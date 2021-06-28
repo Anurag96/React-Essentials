@@ -16,6 +16,7 @@ function Main(props){
     <section>
       <p> We serve the most amazing food around St.Louis.</p>
       <img src={restaurant} height={200} alt=""/>
+      <h3>List of Menus</h3>
       <ul style={{textAlign:"left"}}>
       {
         props.dishes.map((dish)=>(
@@ -23,6 +24,25 @@ function Main(props){
         ))
       }
       </ul>
+      <h3>List of Chefs</h3>
+      <ul style={{textAlign:"left"}}>
+      {
+        props.chefList.map((chef)=>(
+        <li key={chef.idss}> {chef.chef}</li>
+        ))
+      }
+      </ul>
+
+      <h3>List of Deserts</h3>
+      <ul style={{textAlign:"left"}}>
+        {
+
+          props.desert.map((des)=>(
+            <li id={des.ide}>{des.itemList}</li>
+          ))
+        }
+      </ul>
+     
       </section>
   )
 }
@@ -44,12 +64,18 @@ const dishes=[
 
 const disheObjects = dishes.map((dish,i)=>({id:i,title:dish}))
 
+const chefList=["Anurag","Manisha","Amarsingh","Akriti"]
+
+const chefListObject = chefList.map((name,i)=>({idss:i,chef:name}));
+
+const desert =["Glab Jamun","Rass Maali","Kheer"]
+const desertObject= desert.map((item,i)=>({itemList:item,ide:i}));
 
 function App() {
   return (
     <div className="App">
     <Header name="Anurag Kumar"/>
-    <Main adjective="amazing" dishes={disheObjects}/>
+    <Main dishes={disheObjects} chefList={chefListObject}  desert={desertObject}/>
     <Footer year={new Date().getFullYear()}/>
       
     </div>
