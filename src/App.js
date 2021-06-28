@@ -1,7 +1,9 @@
+import React from 'react';
 import './App.css';
+import restaurant from "./restaurant.jpg"
 
 function Header(props){
-  console.log(props)
+
   return (
     <header>
       <h1>{props.name}'s Kitchen</h1>
@@ -13,6 +15,7 @@ function Main(props){
   return(
     <section>
       <p> We serve the most amazing food around St.Louis.</p>
+      <img src={restaurant} height={200} alt=""/>
       <ul style={{textAlign:"left"}}>
       {
         props.dishes.map((dish)=>(
@@ -41,7 +44,6 @@ const dishes=[
 
 const disheObjects = dishes.map((dish,i)=>({id:i,title:dish}))
 
-console.log(disheObjects)
 
 function App() {
   return (
