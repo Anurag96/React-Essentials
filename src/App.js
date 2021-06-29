@@ -38,7 +38,7 @@ function Main(props){
         {
 
           props.desert.map((des)=>(
-            <li id={des.ide}>{des.itemList}</li>
+            <li key={des.ide}>{des.itemList}</li>
           ))
         }
       </ul>
