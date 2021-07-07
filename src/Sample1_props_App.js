@@ -83,5 +83,5 @@ function App() {
   );
 }
 
-export default Sample_App;
+export default Sample1_App;
 */
